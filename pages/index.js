@@ -21,7 +21,7 @@ const query = gql`
 const AllNews = () => (
   <div>
     <Query query={query}>
-      {({ data: { news: { nodes: list }}}) =>
+      {({ news: { nodes: list }}) =>
        <>
          <h1>News</h1>
          <ul>
