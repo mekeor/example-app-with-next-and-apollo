@@ -11,6 +11,10 @@ application without any third-party libraries.
 | [[https://github.com/mekeor/example-app-with-next-and-apollo/blob/master/pages/index.js][pages/index.js]]       | In this definition of the index-page, we render a list of news fetched through GraphQL using the =<Query>= component                                                               |
 | [[https://github.com/mekeor/example-app-with-next-and-apollo/blob/master/pages/news/%255Bslug%255D.js][pages/news/{slug}.js]] | In this definition of a news-page, we render a single news fetched through GraphQL using the =<Query>= component and using =withRouter= from the =next/router= package             |
 
+** Configuration
+
+You need to set the URI to your GraphQL-API at [[https://github.com/mekeor/example-app-with-next-and-apollo/blob/master/pages/_app.js][pages/_app.js]].
+
 ** Caveats
 
 I don't know anything about how this example behaves regarding server-side rendering.
@@ -33,3 +37,16 @@ I don't know anything about how this example behaves regarding server-side rende
 
 - https://nextjs.org/docs/advanced-features/custom-app
 - https://nextjs.org/docs/api-reference/next/router#withrouter
+
+** Backend used for this example
+
+The backend serving the API is not part of this example. But you can see the queries which are used to fetch data from the backend. As the backend-application, I run Wordpress on =localhost= using the following plugins:
+
+- Advanced Custom Fields PRO
+- Advanced Custom Fields: Extended
+- Classic Editor
+- Custom Post Type UI
+- WP GraphiQL
+- WP GraphQL
+- WPGraphQL Custom Post Type UI
+- WPGraphQL for Advanced Custom Fields
