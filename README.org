@@ -1,0 +1,35 @@
+* Minimal Example-App using Apollo within Next.js
+
+This example application shows how to use Apollo for GraphQL within an Next.js
+application without any third-party libraries.
+
+** Explanation
+
+| [[https://github.com/mekeor/example-app-with-next-and-apollo/blob/master/package.json][package.json]]         | This is a minimal package. It only uses these packages: =@apollo/react-hooks=, =apollo-boost=, =graphql=, =isomorphic-unfetch=, =next=, =react=, =react-dom=                       |
+| [[https://github.com/mekeor/example-app-with-next-and-apollo/blob/master/pages/_app.js][pages/_app.js]]        | In order to create an Apollo client and to use the =ApolloProvider= component to wrap our whole app from the =@apollo/react-hooks= package, we use create a [[https://nextjs.org/docs/advanced-features/custom-app][custom app.js]] for Next |
+| [[https://github.com/mekeor/example-app-with-next-and-apollo/blob/master/components/query.js][components/query.js]]  | Here we create a little =<Query>= component which works as a wrapper for the =useQuery= hook from the =@apollo/react-hooks= package                                                |
+| [[https://github.com/mekeor/example-app-with-next-and-apollo/blob/master/pages/index.js][pages/index.js]]       | In this definition of the index-page, we render a list of news fetched through GraphQL using the =<Query>= component                                                               |
+| [[https://github.com/mekeor/example-app-with-next-and-apollo/blob/master/pages/news/%255Bslug%255D.js][pages/news/{slug}.js]] | In this definition of a news-page, we render a single news fetched through GraphQL using the =<Query>= component and using =withRouter= from the =next/router= package             |
+
+** Caveats
+
+I don't know anything about how this example behaves regarding server-side rendering.
+
+** Further recommendations
+
+- I would recommend to use https://github.com/lfades/next-plugin-graphql for =*.gql=-files.
+
+** Further Readings
+
+*** Readings on the topic of Next+Apollo
+
+- [[https://github.com/lfades/next-with-apollo]]
+- [[https://medium.com/@tomanagle/create-a-server-side-rendering-graphql-client-with-next-js-and-apollo-client-acd397f70c64]]
+- [[https://github.com/adamsoffer/next-apollo]]
+- https://github.com/atherosai/next-react-graphql-apollo-hooks
+- https://www.apollographql.com/docs/react/get-started/
+
+*** Readings on other related topics which were used for this example
+
+- https://nextjs.org/docs/advanced-features/custom-app
+- https://nextjs.org/docs/api-reference/next/router#withrouter
