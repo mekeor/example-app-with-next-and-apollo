@@ -1,8 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-// import App from 'next/app';
-
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
