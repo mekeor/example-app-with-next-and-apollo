@@ -9,7 +9,7 @@ import Query from '../../components/query';
 
 const query = gql`
 query($uri: String!) {
-  nodeByUri(uri: $uri) {
+  news: nodeByUri(uri: $uri) {
     ... on Report {
       title
       uri
@@ -18,18 +18,18 @@ query($uri: String!) {
 }
 `;
 
-const OneNews = (router) => (
+const OneNews = ({router}) => (
   <div>
-    router && router.query && router.query.slug && <Query query={query} variables={{uri: 'news/' + router.query.slug}}>
-      {({ data: { news: { nodes: list }}}) =>
-       <>
-         <h1>News</h1>
-         {
-           list.map(news => <h2>{news.title}</h2>)
-         }
-       </>
-      }
-    </Query>
+    { router && router.query && router.query.slug && (
+      <Query query={query} variables={{uri: 'news/' + router.query.slug}}>
+        {({ news: { title } }) =>
+         <>
+           <h1>{title}</h1>
+         </>
+        }
+      </Query>
+    )
+  }
   </div>
 );
 

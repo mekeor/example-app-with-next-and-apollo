@@ -26,7 +26,12 @@ const AllNews = () => (
          <h1>News</h1>
          <ul>
          {
-           list.map(news => <li><Link href={news.uri}><a>{news.title}</a></Link></li>)
+           list.map(news => (
+             <li key={news.url}>
+               <Link href={news.uri}>
+                 <a>{news.title}</a>
+               </Link>
+             </li>))
          }
          </ul>
        </>
